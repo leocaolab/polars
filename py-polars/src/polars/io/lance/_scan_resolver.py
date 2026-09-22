@@ -43,7 +43,8 @@ class LanceScanResolver(LazyFrameResolver):
             self.dataset_uri() == other.dataset_uri()
             and self.version == other.version
             and self.storage_options == other.storage_options
-            and self.credential_provider_builder == other.credential_provider_builder
+            and self.credential_provider_builder.stable_cache_key()
+            == other.credential_provider_builder.stable_cache_key()
         )
 
     def resolve_lazyframe(
