@@ -38,13 +38,24 @@ class LanceScanResolver(LazyFrameResolver):
         """Fetch the schema of the dataset."""
         return Schema(self.dataset().schema)
 
-    def cse_eq(self, other: LanceScanResolver) -> bool:
+    def cse_eq(self, other: object) -> bool:
         return (
-            self.dataset_uri() == other.dataset_uri()
+            isinstance(other, LanceScanResolver)
+            and self.dataset_uri() == other.dataset_uri()
             and self.version == other.version
             and self.storage_options == other.storage_options
-            and self.credential_provider_builder.stable_cache_key()
-            == other.credential_provider_builder.stable_cache_key()
+            and (
+                (
+                    self.credential_provider_builder is None
+                    and other.credential_provider_builder is None
+                )
+                or (
+                    self.credential_provider_builder is not None
+                    and other.credential_provider_builder is not None
+                    and self.credential_provider_builder.stable_cache_key()
+                    == other.credential_provider_builder.stable_cache_key()
+                )
+            )
         )
 
     def resolve_lazyframe(
@@ -188,10 +199,10 @@ class LanceScanResolver(LazyFrameResolver):
 
             self.dataset_.set(dataset)
 
-        dataset = self.dataset_.get()
+        dataset: lance.LanceDataset = self.dataset_.get()  # type: ignore[no-redef]
 
         if self.version is None:
-            dataset.checkout_latest()
+            dataset.checkout_latest()  # type: ignore[no-untyped-call]
         else:
             dataset = dataset.checkout_version(self.version)
 

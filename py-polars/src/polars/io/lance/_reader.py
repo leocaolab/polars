@@ -194,7 +194,7 @@ class LanceFragmentReader(FileReader):
         # Future note: Lance operation order is filter->limit.
         batches_iter = self.dataset.scanner(
             fragments=self.get_fragments(),
-            columns=columns,  # type: ignore[bad-argument-type]
+            columns=columns,  # type: ignore[arg-type]
             limit=slice_limit,
             batch_readahead=num_pipelines,
         ).to_batches()
@@ -245,17 +245,17 @@ class LanceFragmentReader(FileReader):
         if self.n_rows_in_file_cached is None:
             self.n_rows_in_file_cached = self.dataset.scanner(
                 fragments=self.get_fragments()
-            ).count_rows()
+            ).count_rows()  # type: ignore[no-untyped-call]
 
-        return self.n_rows_in_file_cached
+        return self.n_rows_in_file_cached  # type: ignore[return-value]
 
     def get_fragments(self) -> list[lance.LanceFragment]:
         if self.fragments_cached is None:
             self.fragments_cached = [
                 self.dataset.get_fragment(x) for x in self.fragment_ids
-            ]
+            ]  # type: ignore[assignment]
 
-        return self.fragments_cached
+        return self.fragments_cached  # type: ignore[return-value]
 
 
 def send_arrow_batches(
