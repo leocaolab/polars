@@ -243,7 +243,7 @@ class LanceFragmentReader(FileReader):
         limit: int | None = None,  # noqa: ARG002
     ) -> int:
         if self.n_rows_in_file_cached is None:
-            self.n_rows_in_file_cached = self.dataset.scanner(
+            self.n_rows_in_file_cached = self.dataset.scanner(  # type: ignore[assignment]
                 fragments=self.get_fragments()
             ).count_rows()  # type: ignore[no-untyped-call]
 
