@@ -3912,9 +3912,8 @@ dependencies = [
 
 [[package]]
 name = "pyo3"
-version = "0.29.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd274650b21d4bfc26a0a47587962c1edb425f69287324355cd040c3ea66071c"
+version = "0.29.2"
+source = "git+https://github.com/leocaolab/pyo3?tag=subinterp-2026-09-23#0e008b3e4dda9c95a0d626f18c7938f87a4ca3fd"
 dependencies = [
  "chrono",
  "chrono-tz",
@@ -3929,18 +3928,16 @@ dependencies = [
 
 [[package]]
 name = "pyo3-build-config"
-version = "0.29.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5e2a7d2f0d013342f295c048ad19237add5154a55b1c5a254c0ec93d4109078"
+version = "0.29.2"
+source = "git+https://github.com/leocaolab/pyo3?tag=subinterp-2026-09-23#0e008b3e4dda9c95a0d626f18c7938f87a4ca3fd"
 dependencies = [
  "target-lexicon",
 ]
 
 [[package]]
 name = "pyo3-ffi"
-version = "0.29.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ca85c467da1bbc8d866eea5deff9cf29ea5f7785054a17da36e65bda9c05845b"
+version = "0.29.2"
+source = "git+https://github.com/leocaolab/pyo3?tag=subinterp-2026-09-23#0e008b3e4dda9c95a0d626f18c7938f87a4ca3fd"
 dependencies = [
  "libc",
  "pyo3-build-config",
@@ -3948,26 +3945,24 @@ dependencies = [
 
 [[package]]
 name = "pyo3-macros"
-version = "0.29.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ac53762fd065daa3194dd09337a38bd793a188100fd1a9304c4ab312d901771"
+version = "0.29.2"
+source = "git+https://github.com/leocaolab/pyo3?tag=subinterp-2026-09-23#0e008b3e4dda9c95a0d626f18c7938f87a4ca3fd"
 dependencies = [
  "proc-macro2",
  "pyo3-macros-backend",
  "quote",
- "syn 2.0.117",
+ "syn 3.0.6",
 ]
 
 [[package]]
 name = "pyo3-macros-backend"
-version = "0.29.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ca3a1557399783172dc5bf39cfca835157732532cba56b71d2292161e53b362"
+version = "0.29.2"
+source = "git+https://github.com/leocaolab/pyo3?tag=subinterp-2026-09-23#0e008b3e4dda9c95a0d626f18c7938f87a4ca3fd"
 dependencies = [
  "heck",
  "proc-macro2",
  "quote",
- "syn 2.0.117",
+ "syn 3.0.6",
 ]
 
 [[package]]
@@ -4988,6 +4983,17 @@ name = "syn"
 version = "2.0.117"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e665b8803e7b1d2a727f4023456bbbbe74da67099c585258af0ad9c5013b9b99"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "unicode-ident",
+]
+
+[[package]]
+name = "syn"
+version = "3.0.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8593e8e72159ed2257d083c7a454a85cbf854f37a0966d8d483aff8c8a3ebcee"
 dependencies = [
  "proc-macro2",
  "quote",

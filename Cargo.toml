@@ -172,6 +172,14 @@ color-backtrace = { git = "https://github.com/orlp/color-backtrace", rev = "bb62
 # https://github.com/tikv/jemallocator/pull/168
 tikv-jemalloc-sys = { git = "https://github.com/pola-rs/jemallocator", rev = "0d683dfb157097e2075d5e0eaf25f71f514a7552" }
 
+# PyO3 with per-interpreter state for own-GIL sub-interpreters (leocaolab/pyo3).
+# Pinned to a release tag, not a local path, so builds are reproducible and match pyronova.
+pyo3 = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
+pyo3-ffi = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
+pyo3-macros = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
+pyo3-macros-backend = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
+pyo3-build-config = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
+
 [profile.dev]
 debug = "line-tables-only"
 
