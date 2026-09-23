@@ -174,11 +174,11 @@ tikv-jemalloc-sys = { git = "https://github.com/pola-rs/jemallocator", rev = "0d
 
 # PyO3 with per-interpreter state for own-GIL sub-interpreters (leocaolab/pyo3).
 # Pinned to a release tag, not a local path, so builds are reproducible and match pyronova.
-pyo3 = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
-pyo3-ffi = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
-pyo3-macros = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
-pyo3-macros-backend = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
-pyo3-build-config = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23" }
+pyo3 = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23.2" }
+pyo3-ffi = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23.2" }
+pyo3-macros = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23.2" }
+pyo3-macros-backend = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23.2" }
+pyo3-build-config = { git = "https://github.com/leocaolab/pyo3", tag = "subinterp-2026-09-23.2" }
 
 [profile.dev]
 debug = "line-tables-only"
